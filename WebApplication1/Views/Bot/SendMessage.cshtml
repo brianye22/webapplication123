@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Send msg";
+}
+@*<h2>@ViewData["Title"]</h2>*@
+
+<h2>Sending messages from the web app</h2>
+
+@model BotMessageModel
+
+    @using (Html.BeginForm("SendMessage", "Bot", FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => model.message)
+        @Html.ValidationMessageFor(model => model.message)
+        <button type="submit">Send</button>
+    }
