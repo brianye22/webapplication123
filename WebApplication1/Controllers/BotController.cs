@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace WebApplication1.Controllers
 {
@@ -19,7 +20,7 @@ namespace WebApplication1.Controllers
   
             var x = new System.Collections.Specialized.NameValueCollection();
             x.Add("api_key", Properties.Resources.bot_api_key);
-            x.Add("user_id", "Anonymous");
+            x.Add("user_id", "Test");
             x.Add("message", msg);
 
             using (var client = new System.Net.WebClient())
@@ -38,12 +39,14 @@ namespace WebApplication1.Controllers
             }
 
             return View("SendMessage", model);
+        }
 
-        }
-        public IActionResult SM()
+        public JsonResult Receive(string msg)
         {
-            return View();
+            dynamic json = JsonConvert.DeserializeObject(msg);
+            return json;
         }
+
 
     }
 }
