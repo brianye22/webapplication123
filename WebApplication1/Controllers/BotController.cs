@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
         public JsonResult Send(string msg = "")
         {
             string botId = Properties.Resources.bot_id;
-  
+
             var x = new System.Collections.Specialized.NameValueCollection();
             x.Add("api_key", Properties.Resources.bot_api_key);
             x.Add("user_id", "Test");
@@ -26,7 +26,7 @@ namespace WebApplication1.Controllers
 
             using (var client = new System.Net.WebClient())
             {
-                client.UploadValues(Properties.Resources.bot_url, "POST",  x);
+                client.UploadValues(Properties.Resources.bot_url, "POST", x);
             }
 
             return Json(x.ToString());
@@ -42,29 +42,19 @@ namespace WebApplication1.Controllers
             return View("SendMessage", model);
         }
 
-        //public JsonResult Receive()
-        //{
-        //    //dynamic json = JsonConvert.DeserializeObject(msg);
-        //    //return json;
-        //    List<string> l = new List<string>();
-        //    l.Add("123");
-        //    return Json(l);
-        //}
-
-        //[HttpPost("")]
         public /*async Task<IActionResult> */ IActionResult Receive()
         {
             using (var reader = new StreamReader(Request.Body))
             {
                 var txt = /*await*/ reader.ReadToEnd();
-
-                Send("received: " + txt);
+                if (!txt.Contains("received"))
+                {
+                    Send("received: " + txt);
+                }
                 return Ok("It Works!");
             }
-
             return Unauthorized();
         }
-
 
     }
 }
