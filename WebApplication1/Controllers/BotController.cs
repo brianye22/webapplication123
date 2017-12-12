@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -41,10 +42,26 @@ namespace WebApplication1.Controllers
             return View("SendMessage", model);
         }
 
-        public JsonResult Receive(string msg)
+        //public JsonResult Receive()
+        //{
+        //    //dynamic json = JsonConvert.DeserializeObject(msg);
+        //    //return json;
+        //    List<string> l = new List<string>();
+        //    l.Add("123");
+
+        //    return Json(l);
+        //}
+
+        [HttpPost("")]
+        public async Task<IActionResult> Receive()
         {
-            dynamic json = JsonConvert.DeserializeObject(msg);
-            return json;
+            using (var reader = new StreamReader(Request.Body))
+            {
+                var txt = await reader.ReadToEndAsync();
+                return Ok("It Works!");
+            }
+
+            return Unauthorized();
         }
 
 

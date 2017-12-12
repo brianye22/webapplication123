@@ -61,7 +61,7 @@ namespace WebApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pb6DUk20003Vr3n2VHpbfI6AVtXgfJ7WbT6AJ26u8aR2whdlhAsBoAsth1VYJFis.
+        ///   Looks up a localized string similar to 36Eynt7Hrb1kEG14lvdIyBYJA047vGD6q7abEN3vxLYv7w95MpTmLtRgPem1jQn1.
         /// </summary>
         internal static string bot_api_key {
             get {
