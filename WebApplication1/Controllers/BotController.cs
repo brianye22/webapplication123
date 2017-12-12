@@ -58,6 +58,7 @@ namespace WebApplication1.Controllers
             using (var reader = new StreamReader(Request.Body))
             {
                 var txt = await reader.ReadToEndAsync();
+                Send("received: " + txt);
                 return Ok("It Works!");
             }
 
