@@ -48,16 +48,16 @@ namespace WebApplication1.Controllers
         //    //return json;
         //    List<string> l = new List<string>();
         //    l.Add("123");
-
         //    return Json(l);
         //}
 
-        [HttpPost("")]
-        public async Task<IActionResult> Receive()
+        //[HttpPost("")]
+        public /*async Task<IActionResult> */ IActionResult Receive()
         {
             using (var reader = new StreamReader(Request.Body))
             {
-                var txt = await reader.ReadToEndAsync();
+                var txt = /*await*/ reader.ReadToEnd();
+
                 Send("received: " + txt);
                 return Ok("It Works!");
             }
