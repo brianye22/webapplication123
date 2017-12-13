@@ -16,6 +16,9 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+
+        public static string loop_breaker = "received message";
+
         public JsonResult Send(string msg = "", string user_id="Test")
         {
             string botId = Properties.Resources.bot_id;
@@ -82,13 +85,13 @@ namespace WebApplication1.Controllers
                 catch (Exception e) {
                 }
 
-                if (exchange_type.Contains("fallback"))
-                {
-                    // process and answer
-
-                    Send("received message: " + message, exchange_exchange_id);
+                if (exchange_type.Contains("fallback") && !message.Contains(BotController.loop_breaker))
+                {   // process and answer
+                    //Send("received message: " + message, exchange_exchange_id);
+                    Send("received message: " + txt);
                 }
-                return Ok("It Works!");
+
+                return Ok(txt);
             }
             return Unauthorized();
         }     
