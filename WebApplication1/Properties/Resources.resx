@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="bot_api_key" xml:space="preserve">
-    <value>36Eynt7Hrb1kEG14lvdIyBYJA047vGD6q7abEN3vxLYv7w95MpTmLtRgPem1jQn1</value>
+    <value>yVv0gWfc93rtJsgvY7UMg7nAC7EQXbe0vqLyzJvEwSAzrwRnMGUFHtKBNVrvQw6v</value>
     <comment>BotApp</comment>
   </data>
   <data name="bot_id" xml:space="preserve">
-    <value>411</value>
+    <value>418</value>
     <comment>BotID</comment>
   </data>
   <data name="bot_name" xml:space="preserve">
