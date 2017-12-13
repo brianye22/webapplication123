@@ -82,7 +82,7 @@ namespace WebApplication1.Controllers
                 catch (Exception e) {
                 }
 
-                if (!exchange_type.Contains("fallback"))
+                if (exchange_type.Contains("fallback"))
                 {
                     // process and answer
 
