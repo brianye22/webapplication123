@@ -68,25 +68,7 @@
 
     @RenderSection("Scripts", required: false)
 
-    <!--
-
-         -->
-    <script type="text/javascript">
-        (
-            function (key) {
-                try {
-                    window.chatbubbleKey = key;
-                    var scriptEl = document.createElement('script');
-                    scriptEl.type = 'text/javascript';
-                    scriptEl.async = 'async';
-                    scriptEl.src = 'https://kindly-chatbubble-production.firebaseapp.com/chatbubble.js';
-                    var targetEl = document.getElementsByTagName('script')[0];
-                    targetEl.parentNode.insertBefore(scriptEl, targetEl);
-                } catch (e) { };
-            }('4b731dbb-abfa-47b1-84a9-0d7834c3873f'));
-
-
-    </script>
+    <script type="text/javascript">(function(key){try{window.chatbubbleKey=key;var scriptEl=document.createElement('script');scriptEl.type='text/javascript';scriptEl.async='async';scriptEl.src='https://kindly-chatbubble-production.firebaseapp.com/chatbubble.js';var targetEl=document.getElementsByTagName('script')[0];targetEl.parentNode.insertBefore(scriptEl,targetEl);}catch(e){};}('e4fd32a7-b1a7-4abd-933e-0aef2d5166b7'));</script>
 
 </body>
 </html>
