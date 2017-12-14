@@ -88,7 +88,7 @@ namespace WebApplication1.Controllers
                 if (exchange_type.Contains("dialogue") && !message.Contains(BotController.loop_breaker))
                 {   // process and answer
                     //Send("received message: " + message, exchange_exchange_id);
-                    Send("received message: " + txt + exchange_type);
+                    Send("received message: " + txt);
                 }
 
                 return Ok(txt);
