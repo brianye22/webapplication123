@@ -126,7 +126,7 @@
     <comment>BotID</comment>
   </data>
   <data name="bot_name" xml:space="preserve">
-    <value>Test</value>
+    <value>Visma Collectors Online New Customer</value>
   </data>
   <data name="bot_url" xml:space="preserve">
     <value>https://bot.kindly.ai/api/v1/send</value>
