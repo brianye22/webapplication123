@@ -88,7 +88,7 @@ namespace WebApplication1.Controllers
                 if (exchange_type.Contains("fallback") && !message.Contains(BotController.loop_breaker))
                 {   // process and answer
                     //Send("received message: " + message, exchange_exchange_id);
-                    Send("received message: " + txt);
+                    Send("received message: " + "I have no idea what i am doing");
                 }
 
                 return Ok(txt);
